@@ -1,0 +1,792 @@
+/*********** Définition de variables CSS dans l'élément racine *********/
+
+:root {
+  --font-default: "DM Sans", Arial, Helvetica, sans-serif; /* Police de caractères par défaut */
+  --font-slab: var(--font-default); /* Réutilisation de la variable font-default */
+  --modal-duration: 0.8s; /* Durée de la transition pour les modaux */
+}
+
+/****** Applique la boîte de bordure et réinitialise les marges et les paddings de tous les éléments ******/
+
+* {
+  box-sizing: border-box; /* Inclut les bordures et le padding dans la taille totale des éléments */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime les paddings par défaut */
+}
+
+/************ Styles pour la page de destination ***********/
+
+body {
+  margin: 0; /* Supprime les marges par défaut du body */
+  display: flex; /* Utilise le modèle de boîte flexible */
+  flex-direction: column; /* Dispose les enfants du body en colonne */
+  background-image: url("../images/white-png-base.jpg"); /* Définit une image de fond */
+  font-family: var(--font-default); /* Utilise la police de caractères par défaut */
+  font-size: 18px; /* Définit la taille de police à 18 pixels */
+  max-width: 1300px; /* Limite la largeur maximale à 1300 pixels */
+  margin: 0 auto; /* Centre horizontalement le contenu */
+}
+
+img {
+  padding-right: 1rem; /* Ajoute un padding à droite des images */
+
+}
+
+/*********** Topnav ***********/ 
+
+.topnav {
+  overflow: hidden; /* Cache les débordements */
+  margin: 3.5%; /* Ajoute une marge de 3.5% autour de la navigation */
+}
+
+.topnav a {
+  float: left; /* Aligne les liens à gauche */
+  display: block; /* Les rend comme des blocs pour inclure les paddings et marges */
+  color: #000000; /* Définit la couleur du texte en noir */
+  text-align: center; /* Centre le texte à l'intérieur des liens */
+  padding: 12px 12px; /* Ajoute un padding de 12px autour des liens */
+  margin: 5px; /* Ajoute une marge de 5px autour des liens */
+  text-decoration: none; /* Supprime la décoration du texte (pas de soulignement) */
+  font-size: 20px; /* Définit la taille de la police à 20 pixels */
+  font-family: Roboto, sans-serif; /* Utilise la police Roboto */
+}
+
+.topnav a:hover {
+  background-color: #ff0000; /* Change la couleur de fond au survol en rouge */
+  color: #ffffff; /* Change la couleur du texte au survol en blanc */
+  border-radius: 15px; /* Ajoute des coins arrondis de 15px */
+  text-decoration: underline; /* Souligne le texte */
+  text-underline-offset: 5px; /* Décale la ligne de soulignement de 5px vers le bas */
+}
+
+.topnav .icon {
+  display: none; /* Cache l'icône de navigation */
+  color: red; /* Définit la couleur du texte en rouge */
+  margin-top: 15px; /* Ajoute un espace au-dessus de l'icône */
+  font-size: 20px; /* Définit la taille de la police à 20 pixels */
+}
+
+.header-logo {
+    float: left; /* Place le logo en haut à gauche */
+    display: flex; /* Utilise le modèle de boîte flexible pour la disposition */
+    margin-top: 10px; /* Ajoute un espace de 10 pixels au-dessus de l'élément */
+}
+
+.main-navbar {
+    float: right; /* Place la barre de navigation principale en haut à droite */
+}
+
+/************ Styles pour l'élément main ************/
+
+main {
+  font-size: 130%; /* Définit la taille de la police à 130% */
+  font-weight: bolder; /* Met le texte en gras */
+  color: black; /* Définit la couleur du texte en noir */
+  padding-top: 0.5vw; /* Ajoute un padding supérieur de 0.5vw */
+  padding-left: 2vw; /* Ajoute un padding à gauche de 2vw */
+  padding-right: 2vw; /* Ajoute un padding à droite de 2vw */
+  margin: 1px 20px 15px; /* Définit les marges */
+  border-radius: 2rem; /* Ajoute des coins arrondis */
+  text-align: justify; /* Justifie le texte */
+}
+
+/*********** Styles for the hero section ***********/
+
+.hero-section {
+  min-height: 93vh; /* Définit la hauteur minimale à 93% de la hauteur de la fenêtre */
+  border-radius: 10px; /* Ajoute des coins arrondis */
+  display: grid; /* Utilise le modèle de grille pour la mise en page */
+  grid-template-columns: repeat(12, 1fr); /* Définit une grille de 12 colonnes */
+  overflow: hidden; /* Cache les débordements */
+  box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2); /* Ajoute une ombre à la boîte */
+  margin-bottom: 10px; /* Ajoute une marge inférieure de 10 pixels */
+}
+
+/* Styles for the hero content */
+.hero-content {
+  padding: 51px 67px; /* Ajoute du padding autour de l'élément */
+  grid-column: span 4; /* Occupe 4 colonnes dans la grille */
+  background: #232323; /* Définit la couleur de fond en noir */
+  color: #fff; /* Définit la couleur du texte en blanc */
+  position: relative; /* Positionne l'élément relativement */
+  text-align: left; /* Aligne le texte à gauche */
+  min-width: 424px; /* Définit la largeur minimale à 424 pixels */
+}
+
+.hero-content::after {
+  content: ""; /* Ajoute un contenu vide */
+  width: 100%; /* Définit la largeur à 100% */
+  height: 100%; /* Définit la hauteur à 100% */
+  background: #232323; /* Définit la couleur de fond en noir */
+  position: absolute; /* Positionne l'élément absolument */
+  right: -80px; /* Place l'élément à -80 pixels de la droite */
+  top: 0; /* Place l'élément en haut */
+}
+
+.hero-content > * {
+  position: relative; /* Positionne les enfants relativement */
+  z-index: 1; /* Définit l'ordre de superposition */
+}
+
+/* Styles for the hero headline */
+.hero-headline {
+  font-size: 6rem; /* Définit la taille de la police à 6rem */
+  font-weight: normal; /* Définit le poids de la police en normal */
+  white-space: nowrap; /* Empêche le retour à la ligne */
+}
+
+/* Styles for the hero text */
+.hero-text {
+  width: 146%; /* Définit la largeur à 146% */
+  font-weight: normal; /* Définit le poids de la police en normal */
+  margin-top: 57px; /* Ajoute une marge supérieure de 57 pixels */
+  padding: 0; /* Supprime le padding */
+}
+
+p {
+  margin-bottom: 0; /* Supprime la marge inférieure des paragraphes */
+  padding: 0.5vw; /* Ajoute un padding de 0.5vw aux paragraphes */
+}
+
+/*********** Styles pour les boutons de modal ***********/
+
+.modal-btn {
+  font-size: 145%; /* Définit la taille de la police à 145% */
+  background: #fe142f; /* Définit la couleur de fond en rouge */
+  display: flex; /* Utilise le modèle de boîte flexible */
+  margin: auto; /* Centre le bouton horizontalement */
+  padding: 2em; /* Ajoute un padding de 2em */
+  color: #fff; /* Définit la couleur du texte en blanc */
+  padding: 0.75rem 2.5rem; /* Ajoute un padding spécifique */
+  border-radius: 1rem; /* Ajoute des coins arrondis */
+  cursor: pointer; /* Change le curseur en pointeur */
+}
+
+.modal-btn:hover {
+  background: #3876ac; /* Change la couleur de fond au survol en bleu */
+}
+
+/*********** Styles pour les petites polices ***********/
+.smFont {
+  font-size: 16px; /* Définit la taille de la police à 16 pixels */
+}
+
+/*********** Styles for the hero image ***********/
+.hero-img {
+  grid-column: span 8; /* Occupe 8 colonnes dans la grille */
+}
+
+.hero-img img {
+  width: 100%; /* Définit la largeur à 100% */
+  height: 100%; /* Définit la hauteur à 100% */
+  display: block; /* Affiche comme un bloc */
+  padding: 0; /* Supprime le padding */
+}
+
+/*********** Cacher le bouton d'inscription dans la section hero ***********/
+.hero-section > .btn-signup {
+  display: none; /* Cache l'élément */
+}
+
+/************ Styles pour les boutons génériques *************/
+
+.button {
+  background: #fe142f; /* Définit la couleur de fond en rouge */
+  margin-top: 0.5em; /* Ajoute une marge supérieure de 0.5em */
+  padding: 1em; /* Ajoute un padding de 1em */
+  color: #fff; /* Définit la couleur du texte en blanc */
+  border-radius: 15px; /* Ajoute des coins arrondis */
+  cursor: pointer; /* Change le curseur en pointeur */
+  font-size: 16px; /* Définit la taille de la police à 16 pixels */
+}
+
+.button:hover {
+  background: #3876ac; /* Change la couleur de fond au survol en bleu */
+}
+
+/************ Styles pour l'arrière-plan des modaux ***********/
+
+.bground {
+  display: none; /* Cache l'arrière-plan */
+  position: fixed; /* Positionne l'arrière-plan de façon fixe */
+  z-index: 1; /* Définit l'ordre de superposition */
+  left: 0; /* Place à gauche */
+  top: 0; /* Place en haut */
+  height: 100%; /* Prend toute la hauteur */
+  width: 100%; /* Prend toute la largeur */
+  overflow: auto; /* Permet le défilement si nécessaire */
+  background-color: rgba(26, 39, 156, 0.4); /* Définit une couleur de fond avec transparence */
+}
+
+/************ Styles pour le contenu des modaux ***********/
+
+.content {
+  margin: 5% auto; /* Centre le contenu verticalement et horizontalement */
+  width: 100%; /* Prend toute la largeur */
+  max-width: 500px; /* Limite la largeur maximale à 500 pixels */
+  animation-name: modalopen; /* Nom de l'animation */
+  animation-duration: var(--modal-duration); /* Durée de l'animation */
+  background: #232323; /* Définit la couleur de fond en noir */
+  border-radius: 10px; /* Ajoute des coins arrondis */
+  overflow: hidden; /* Cache les débordements */
+  position: relative; /* Position relative */
+  color: #fff; /* Couleur du texte en blanc */
+  padding-top: 10px; /* Ajoute un padding supérieur de 10 pixels */
+}
+
+/************ Styles pour le bouton de fermeture ************/
+
+.close {
+  position: absolute; /* Position absolue */
+  right: 15px; /* Déplacement à droite de 15 pixels */
+  top: 15px; /* Déplacement en haut de 15 pixels */
+  width: 32px; /* Largeur de 32 pixels */
+  height: 32px; /* Hauteur de 32 pixels */
+  opacity: 1; /* Opacité pleine */
+  cursor: pointer; /* Change le curseur en pointeur */
+  transform: scale(0.7); /* Réduit la taille */
+}
+
+.close:before,
+.close:after {
+  position: absolute; /* Position absolue */
+  left: 15px; /* Déplacement à gauche de 15 pixels */
+  content: " "; /* Contenu vide */
+  height: 33px; /* Hauteur de 33 pixels */
+  width: 3px; /* Largeur de 3 pixels */
+  background-color: #fff; /* Couleur de fond blanche */
+}
+
+.close:before {
+  transform: rotate(45deg); /* Rotation */
+}
+
+.close:after {
+  transform: rotate(-45deg); /* Rotation */
+}
+
+.modal-body {
+  padding: 15px 8%; /* Ajoute un padding spécifique */
+  margin: 15px auto; /* Ajoute une marge spécifique */
+}
+
+/*********** Styles pour les labels ***********/
+
+label {
+  font-family: var(--font-default); /* Utilise la police définie par la variable */
+  font-size: 17px; /* Définit la taille de la police à 17 pixels */
+  font-weight: normal; /* Poids de police normal */
+  display: inline-block; /* Affiche en ligne tout en se comportant comme un bloc */
+  margin-bottom: 11px; /* Ajoute une marge inférieure de 11 pixels */
+}
+
+/*********** Styles pour les contrôles de texte ************/
+
+.text-control {
+  margin: 0; /* Supprime les marges */
+  padding: 8px; /* Ajoute un padding de 8 pixels */
+  width: 100%; /* Prend toute la largeur */
+  border-radius: 8px; /* Ajoute des coins arrondis */
+  font-size: 20px; /* Définit la taille de la police à 20 pixels */
+  height: 48px; /* Définit la hauteur à 48 pixels */
+}
+
+/*********** Style for text labels ***********/
+
+.text-label {
+  font-weight: normal; /* Définit le poids de la police en normal */
+  font-size: 16px; /* Définit la taille de la police à 16 pixels */
+}
+
+/************ All Checkbox ***********/
+
+/* Styles pour les labels de cases à cocher */
+.checkbox-label,
+.checkbox2-label {
+  position: relative; /* Position relative */
+  margin-left: 36px; /* Marge à gauche de 36 pixels */
+  font-size: 12px; /* Taille de la police à 12 pixels */
+  font-weight: normal; /* Poids de police normal */
+}
+
+/* Styles pour les icônes de cases à cocher */
+.checkbox-label .checkbox-icon,
+.checkbox2-label .checkbox-icon {
+  display: block; /* Affiche comme un bloc */
+  width: 20px; /* Largeur de 20 pixels */
+  height: 20px; /* Hauteur de 20 pixels */
+  border: 2px solid #279e7a; /* Bordure verte */
+  border-radius: 50%; /* Bordure arrondie */
+  text-indent: 29px; /* Indentation de texte */
+  white-space: nowrap; /* Pas de retour à la ligne */
+  position: absolute; /* Position absolue */
+  left: -30px; /* Déplacement à gauche de 30 pixels */
+  top: -1px; /* Déplacement en haut de 1 pixel */
+  transition: 0.3s; /* Transition douce */
+}
+
+/* Styles pour l'état activé des icônes de cases à cocher */
+.checkbox-label .checkbox-icon::after,
+.checkbox2-label .checkbox-icon::after {
+  content: ""; /* Pas de contenu texte */
+  width: 13px; /* Largeur de 13 pixels */
+  height: 13px; /* Hauteur de 13 pixels */
+  background-color: #279e7a; /* Couleur de fond verte */
+  border-radius: 50%; /* Bordure arrondie */
+  text-indent: 29px; /* Indentation de texte */
+  white-space: nowrap; /* Pas de retour à la ligne */
+  position: absolute; /* Position absolue */
+  left: 50%; /* Centrage horizontal */
+  top: 50%; /* Centrage vertical */
+  transform: translate(-50%, -50%); /* Ajustement pour le centrage */
+  transition: 0.3s; /* Transition douce */
+  opacity: 0; /* Initialement caché */
+}
+
+/* Styles pour l'entrée des cases à cocher */
+.checkbox-input {
+  display: none; /* Cache l'entrée */
+}
+
+/* Styles pour l'état activé des cases à cocher */
+.checkbox-input:checked + .checkbox-label .checkbox-icon::after,
+.checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
+  opacity: 1; /* Affiche l'icône */
+}
+
+.checkbox-input:checked + .checkbox2-label .checkbox-icon {
+  background: #279e7a; /* Change la couleur de fond en vert */
+}
+
+/* Styles pour les icônes des cases à cocher 2 */
+.checkbox2-label .checkbox-icon {
+  border-radius: 4px; /* Bordure carrée */
+  border: 0; /* Pas de bordure */
+  background: #c4c4c4; /* Couleur de fond grise */
+}
+
+.checkbox2-label .checkbox-icon::after {
+  width: 7px; /* Largeur de 7 pixels */
+  height: 4px; /* Hauteur de 4 pixels */
+  border-radius: 2px; /* Bordure arrondie */
+  background: transparent; /* Fond transparent */
+  border: 2px solid transparent; /* Bordure transparente */
+  border-bottom-color: #fff; /* Bordure inférieure blanche */
+  border-left-color: #fff; /* Bordure gauche blanche */
+  transform: rotate(-55deg); /* Rotation */
+  left: 21%; /* Déplacement à gauche de 21% */
+  top: 19%; /* Déplacement en haut de 19% */
+}
+
+
+/*********** All custom-select ************/
+
+.custom-select {
+  position: relative; /* Position relative */
+  font-family: Arial; /* Police Arial */
+  font-size: 1.1rem; /* Taille de la police de 1.1rem */
+  font-weight: normal; /* Poids de police normal */
+}
+
+.custom-select select {
+  display: none; /* Cache le sélecteur par défaut */
+}
+
+/*********** All select ************/ 
+
+/* Styles pour l'élément sélectionné */
+.select-selected {
+  background-color: #fff; /* Couleur de fond blanche */
+}
+
+/* Style de la flèche à l'intérieur de l'élément de sélection :  */
+.select-selected:after {
+  position: absolute; /* Positionne l'élément absolument par rapport à son conteneur */
+  content: ""; /* Ajoute un contenu vide, utilisé ici pour créer l'icône de la flèche */
+  top: 10px; /* Place l'élément à 10 pixels du haut */
+  right: 13px; /* Place l'élément à 13 pixels de la droite */
+  width: 11px; /* Définit la largeur de l'icône */
+  height: 11px; /* Définit la hauteur de l'icône */
+  border: 3px solid transparent; /* Crée une bordure transparente */
+  border-bottom-color: #f00; /* Colore la bordure inférieure en rouge */
+  border-left-color: #f00; /* Colore la bordure gauche en rouge */
+  transform: rotate(-48deg); /* Fait pivoter l'icône de -48 degrés */
+  border-radius: 5px 0 5px 0; /* Arrondit les coins de l'icône */
+}
+
+/* Pointez la flèche vers le haut lorsque la boîte de sélection est ouverte (active) : */
+.select-selected.select-arrow-active:after {
+  transform: rotate(135deg); /* Fait pivoter l'icône de 135 degrés */
+  top: 13px; /* Place l'icône à 13 pixels du haut */
+}
+
+.select-items div,
+.select-selected {
+  color: #000; /* Définit la couleur du texte en noir */
+  padding: 11px 16px; /* Ajoute du padding autour de l'élément */
+  border: 1px solid transparent; /* Crée une bordure transparente */
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent; /* Colore la bordure inférieure en gris transparent */
+  cursor: pointer; /* Change le curseur en pointeur */
+  border-radius: 8px; /* Ajoute des coins arrondis */
+  height: 48px; /* Définit la hauteur de l'élément */
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute; /* Positionne l'élément absolument */
+  background-color: #fff; /* Définit la couleur de fond en blanc */
+  top: 89%; /* Place l'élément à 89% du haut */
+  left: 0; /* Place l'élément à gauche */
+  right: 0; /* Place l'élément à droite */
+  z-index: 99; /* Définit l'ordre de superposition */
+}
+
+/* Masquer les éléments lorsque la boîte de sélection est fermée : */
+.select-hide {
+  display: none; /* Cache les éléments */
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1); /* Change la couleur de fond au survol */
+}
+
+
+/***********  Bouton de soumission du formulaire & Bouton pour s'inscrire à l'évènement ***********/
+
+.btn-submit,
+.btn-signup {
+  background: #fe142f; /* Couleur de fond rouge */
+  display: block; /* Affiche comme un bloc */
+  margin: 0 auto; /* Centre horizontalement */
+  border-radius: 7px; /* Bordure arrondie */
+  font-size: 1rem; /* Taille de la police de 1rem */
+  padding: 12px 82px; /* Padding spécifique */
+  color: #fff; /* Couleur du texte en blanc */
+  cursor: pointer; /* Change le curseur en pointeur */
+  border: 0; /* Pas de bordure */
+}
+
+/* Styles for the sign-up button */
+.btn-signup {
+  outline: none; /* Supprime le contour par défaut */
+  text-transform: capitalize; /* Met en capitales chaque mot */
+  font-size: 1.3rem; /* Définit la taille de la police à 1.3rem */
+  padding: 15px 23px; /* Ajoute du padding autour de l'élément */
+  margin: 0; /* Supprime les marges */
+  margin-top: 59px; /* Ajoute une marge supérieure de 59 pixels */
+}
+
+/*********** Styles pour les entrées de formulaire ***********/
+input {
+  padding: 8px; /* Ajoute un padding de 8 pixels */
+  border: 0.8px solid #ccc; /* Bordure de 0.8 pixels de couleur grise */
+  outline: none; /* Supprime le contour par défaut */
+}
+
+/*********** Styles pour les erreurs de formulaire ***********/
+.formData[data-error]::after {
+  content: attr(data-error); /* Affiche le contenu de l'attribut data-error */
+  font-size: 0.4em; /* Taille de la police réduite */
+  color: #e54858; /* Couleur rouge */
+  display: block; /* Affiche comme un bloc */
+  margin-top: 7px; /* Marge supérieure de 7 pixels */
+  margin-bottom: 7px; /* Marge inférieure de 7 pixels */
+  text-align: right; /* Alignement du texte à droite */
+  line-height: 0.3; /* Hauteur de ligne réduite */
+  opacity: 0; /* Initialement caché */
+  transition: 0.3s; /* Transition douce */
+}
+
+.formData[data-error-visible="true"]::after {
+  opacity: 1; /* Affiche l'erreur */
+}
+
+.formData[data-error-visible="true"] .text-control {
+  border: 2px solid #e54858; /* Bordure rouge pour les erreurs */
+}
+
+/* Sélectionne tous les éléments <input> qui possèdent un attribut 'data-error' */
+input[data-error]::after {
+  content: attr(data-error);   /* Utilise la valeur de l'attribut 'data-error' comme contenu pour le pseudo-élément ::after */
+  font-size: 0.4em; /* Définit la taille de la police du message d'erreur à 0.4em, ce qui le rend plus petit que le texte normal */
+  color: red; /* Définit la couleur du texte du message d'erreur sur rouge pour le rendre visible */
+}
+
+
+/*********** All footer ************/
+
+/* Styles for the footer */
+footer {
+  padding-left: 2vw; /* Ajoute du padding à gauche */
+  padding-right: 2vw; /* Ajoute du padding à droite */
+  margin: 0 20px; /* Définit les marges */
+}
+
+/* Styles pour le pied de page */
+.footer {
+  margin: 20px; /* Ajoute une marge de 20px */
+  padding: 10px; /* Ajoute un padding de 10px */
+  font-family: var(--font-slab); /* Utilise la police définie par la variable */
+}
+
+/* Styles for the copyrights section */
+.copyrights {
+  color: #fe142f; /* Définit la couleur du texte en rouge */
+  padding: 0; /* Supprime le padding */
+  font-size: 1rem; /* Définit la taille de la police à 1rem */
+  margin: 60px 0 30px; /* Définit les marges */
+  font-weight: bolder; /* Définit le poids de la police en gras */
+}
+
+/*********** All media queries ***********/
+
+/* Styles pour les écrans jusqu'à 1200px de large ; Tablette standard (par exemple, un iPad Air ou Samsung Galaxy Tab). */
+@media screen and (max-width: 1200px) {
+  .hero-headline {
+    font-size: 8vw;/* Définit la taille de la police en pourcentage de la largeur de la vue (viewport) */
+  }
+}
+
+/* Styles pour les écrans jusqu'à 1055px de large ; Ordinateur portable avec un écran de taille plus petite ou un petit écran de 13 pouces (comme un MacBook Air ou un Chromebook).      */
+@media screen and (max-width: 1055px) {
+  .header-logo img {
+    width: 105%;
+  }
+  .main-navbar a {
+    font-size: clamp(0.8rem, 1rem, 1.25rem);/* Définit une taille de police responsive avec une valeur minimale, préférée et maximale */
+    padding: 12px 3px;/* Définit l'espace intérieur (padding) autour du texte des liens */
+  }
+}
+
+
+/* Styles pour les écrans de moins de 768px de largeur ; Smartphone moderne (par exemple, un iPhone 12 ou un Samsung Galaxy S21). */
+@media screen and (max-width: 768px) {
+  /* Ajuste la largeur de l'image du logo et son positionnement */
+  .header-logo img {
+    width: 90%; /* L'image prend 90% de la largeur de son conteneur */
+    display: block; /* Affiche l'image comme un bloc */
+    float: left; /* Aligne l'image à gauche */
+    margin-left: 10px; /* Ajoute une marge à gauche de 10 pixels */
+  }
+
+  /* Affiche les icônes */
+  .icon {
+    display: block; /* Affiche les éléments avec la classe 'icon' */
+  }
+
+  /* Ajuste la section héroïque */
+  .hero-section {
+    display: block; /* Affiche la section comme un bloc */
+    box-shadow: unset; /* Supprime l'ombre portée */
+    margin: 0 auto; /* Centre la section horizontalement */
+  }
+
+  /* Ajuste le contenu de la section héroïque */
+  .hero-content {
+    background: #fff; /* Fond blanc */
+    color: #000; /* Texte noir */
+    padding: 0; /* Aucun padding */
+    margin: 0; /* Aucune marge */
+    min-width: auto; /* Supprime la largeur minimale */
+  }
+  .hero-content::after {
+    content: unset; /* Supprime le pseudo-élément 'after' */
+  }
+  .hero-content .btn-signup {
+    display: none; /* Cache le bouton d'inscription */
+  }
+
+  /* Ajuste le titre de la section héroïque */
+  .hero-headline {
+    font-size: 9vw; /* Taille de police relative à la largeur de la fenêtre */
+  }
+
+  /* Ajuste le texte de la section héroïque */
+  p.hero-text {
+    margin: 25px auto; /* Ajoute une marge verticale de 25 pixels et centre horizontalement */
+    width: 100%; /* Prend toute la largeur */
+    font-size: 4vw; /* Taille de police relative à la largeur de la fenêtre */
+    line-height: 1.4; /* Hauteur de ligne de 1.4 */
+  }
+
+  /* Ajuste l'image de la section héroïque */
+  .hero-img img {
+    border-radius: 10px; /* Coins arrondis de 10 pixels */
+    margin-top: 40px; /* Marge supérieure de 40 pixels */
+  }
+
+  /* Affiche et ajuste le bouton d'inscription dans la section héroïque */
+  .hero-section > .btn-signup {
+    display: block; /* Affiche le bouton */
+    margin: 32px auto 10px; /* Marges : 32px en haut, 10px en bas */
+    padding: 12px 35px; /* Padding : 12px vertical, 35px horizontal */
+  }
+
+  /* Ajuste la section des copyrights */
+  .copyrights {
+    margin-top: 50px; /* Marge supérieure de 50 pixels */
+    text-align: center; /* Centre le texte */
+  }
+
+  /* Ajuste la barre de navigation */
+  .topnav a {
+    display: none; /* Cache les liens de navigation */
+  }
+  .topnav a.icon {
+    float: right; /* Aligne l'icône à droite */
+    display: block; /* Affiche l'icône */
+  }
+
+  /* Ajuste la barre de navigation quand elle est en mode responsive */
+  .topnav.responsive {
+    position: relative; /* Position relative */
+  }
+  .topnav.responsive .icon {
+    position: absolute; /* Position absolue */
+    right: 0; /* Aligne à droite */
+    top: 0; /* Aligne en haut */
+  }
+  .topnav.responsive a {
+    float: none; /* Annule l'alignement flottant */
+    display: block; /* Affiche les liens en bloc */
+    text-align: left; /* Aligne le texte des liens à gauche */
+  }
+}
+
+/* Styles pour les écrans de moins de 540px de largeur ; Smartphone plus petit ou plus ancien (comme un iPhone SE ou un Google Pixel 4a). */
+@media screen and (max-width: 540px){
+  /* Ajuste l'image du logo */
+  .header-logo img {
+    margin-top: 15px; /* Marge supérieure de 15 pixels */
+    margin-left: 10px; /* Marge à gauche de 10 pixels */
+    width: 70%; /* L'image prend 70% de la largeur de son conteneur */
+  }
+
+  /* Ajuste les icônes */
+  .icon {
+    margin-right: 5px; /* Marge à droite de 5 pixels */
+    margin-top: 15px; /* Marge supérieure de 15 pixels */
+    font-size: 1.8rem; /* Taille de police de 1.8rem */
+  }
+
+  /* Cache les liens de navigation */
+  .topnav a {
+    display: none; /* Cache les liens */
+  }
+
+  /* Ajuste le titre de la section héroïque */
+  .hero-headline {
+    font-size: 2rem; /* Taille de police de 2rem */
+    text-align: center; /* Centre le texte */
+    width: 100%; /* Prend toute la largeur */
+  }
+
+  /* Ajuste l'image de la section héroïque */
+  .hero-img img {
+    border-radius: 8px; /* Coins arrondis de 8 pixels */
+    margin-top: 30px; /* Marge supérieure de 30 pixels */
+  }
+
+  /* Ajuste le texte de la section héroïque */
+  p.hero-text {
+    margin: 20px auto; /* Marges verticales de 20 pixels et centre horizontalement */
+    font-size: 3vw; /* Taille de police relative à la largeur de la fenêtre */
+  }
+
+  /* Ajuste le contenu de la section héroïque */
+  .hero-content {
+    padding: 0px; /* Aucun padding */
+  }
+
+  /* Ajuste le bouton d'inscription dans la section héroïque */
+  .hero-section > .btn-signup {
+    margin: 32px auto 10px; /* Marges : 32px en haut, 10px en bas */
+    padding: 8px 33px; /* Padding : 8px vertical, 33px horizontal */
+    font-size: 0.9rem; /* Taille de police de 0.9rem */
+  }
+
+  /* Ajuste le bouton de soumission */
+  .btn-submit {
+    margin: 10px auto; /* Marges verticales de 10 pixels et centre horizontalement */
+    padding: 8px 35px; /* Padding : 8px vertical, 35px horizontal */
+  }
+
+  /* Ajuste la section des copyrights */
+  .copyrights {
+    font-size: 0.8rem; /* Taille de police de 0.8rem */
+    margin: 0px 0 10px; /* Marges : aucune en haut, 10px en bas */
+  }
+
+  /* Ajuste le contenu général */
+  .content {
+    top: 60px; /* Positionne le contenu à 60 pixels du haut */
+  }
+
+  /* Ajuste les labels de texte */
+  .text-label {
+    font-size: 14px; /* Taille de police de 14 pixels */
+  }
+}
+
+
+/* Keyframes for the modal open animation */
+@keyframes modalopen {
+  from {
+    opacity: 0; /* Commence avec une opacité de 0 */
+    transform: translateY(-150px); /* Commence avec une translation verticale */
+  }
+  to {
+    opacity: 1; /* Termine avec une opacité de 1 */
+  }
+}
+
+
+/************ Page Validation ***********/
+
+/* Styles pour le body de la modale de validation */
+.modal-body-valid {
+  display: none; /* Cache l'élément */
+  flex-direction: column; /* Dispose les enfants en colonne */
+  align-items: center; /* Centre les enfants horizontalement */
+  justify-content: center; /* Centre les enfants verticalement */
+  position: absolute; /* Positionne l'élément absolument */
+  background: #232323; /* Définit la couleur de fond en noir */
+  width: 100%; /* Définit la largeur à 100% */
+  height: 100%; /* Définit la hauteur à 100% */
+  z-index: 999; /* Définit l'ordre de superposition */
+}
+
+/* Styles pour l'en-tête de la fenêtre modale de validation */
+.modal-body-valid h3 {
+  text-align: center; /* Centre le texte */
+}
+
+/*  Styles pour le bouton de fermeture de la fenêtre modale de validation */
+.valid-close {
+  position: absolute; /* Positionne l'élément absolument */
+  bottom: 2rem; /* Place l'élément à 2 rem du bas */
+  background: #fe142f; /* Définit la couleur de fond en rouge */
+  display: block; /* Affiche comme un bloc */
+  margin: 0 auto; /* Centre l'élément horizontalement */
+  border-radius: 7px; /* Ajoute des coins arrondis */
+  font-size: 1rem; /* Définit la taille de la police à 1rem */
+  padding: 12px 82px; /* Ajoute du padding autour de l'élément */
+  color: #fff; /* Définit la couleur du texte en blanc */
+  cursor: pointer; /* Change le curseur en pointeur */
+  border: 0; /* Supprime la bordure */
+}
+
+/*********** Erreur texte formulaire ***********/
+
+/* Styles for form error */
+.erreur {
+  border: 2px solid #FF4E60; /* Ajoute une bordure rouge */
+}
+
+/* Styles for form error text */
+.erreur-text {
+  font-size: 0.6rem; /* Définit la taille de la police à 0.6rem */
+  color: #FF4E60; /* Définit la couleur du texte en rouge */
+  font-weight: 400; /* Définit le poids de la police à 400 */
+}
